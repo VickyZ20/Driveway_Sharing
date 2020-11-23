@@ -11,8 +11,9 @@
 
 ### Media:
 ![alt text](https://github.com/VickyZ20/Driveway_Sharing/blob/master/media/shot1.png)
-![alt text](https://github.com/AZYDEVE/Drive_Way_Parking/blob/main/Image/sc3.png)
-![alt text](https://github.com/AZYDEVE/Drive_Way_Parking/blob/main/Image/sc2.png)
+![alt text](https://github.com/VickyZ20/Driveway_Sharing/blob/master/media/shot2.png)
+![alt text](https://github.com/VickyZ20/Driveway_Sharing/blob/master/media/shot3.png)
+![alt text](https://github.com/VickyZ20/Driveway_Sharing/blob/master/media/shot4.png)
 
 ### How to run the programm:  
 - git clone to your local device 
