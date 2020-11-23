@@ -125,11 +125,11 @@ function Home(props) {
           </button>
         </a>
       </nav>
-      <h3 className="home-active-post-title">
+      <main className="home-active-post-title">
         <u>Active Post</u>
-      </h3>
+      </main>
       {dataStatus ? (
-        <div className="home-cardview ">
+        <nav className="home-cardview ">
           {userActivePost.map((t) => (
             <CardView
               style={cardViewStyle}
@@ -141,7 +141,7 @@ function Home(props) {
               buttonName={"appointments"}
             />
           ))}
-        </div>
+        </nav>
       ) : (
         <h1 className="home-cardview ">Loading</h1>
       )}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Hola from "./hola/hola.js";
 import CreatePost from "./createPost/CreatePost.js";
 import SearchPage from "./searchPage/SearchPage.js";
 import Home from "./home/Home.js";
@@ -35,6 +36,7 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path="/hola" component={Hola} />
         <Route path="/signUp" component={SignUp} />
         <Route path="/signin" component={SignIn} />
 

@@ -7,8 +7,6 @@ import swal from "sweetalert";
 import * as loginToken from "../components/loginTokenAndSignOff";
 
 function SignIn() {
- 
-
   const history = useHistory();
   const [signInInfo, setSignInInfo] = useState({
     email: "",
@@ -16,16 +14,18 @@ function SignIn() {
   });
 
   const handleSignIn = async () => {
-    console.log(signInInfo)
-    const isauthenticated = await loginToken.checkIfUserPasswordMatches(signInInfo);
-    console.log(isauthenticated)
-    
+    console.log(signInInfo);
+    const isauthenticated = await loginToken.checkIfUserPasswordMatches(
+      signInInfo
+    );
+    console.log(isauthenticated);
+
     if (isauthenticated.result === true) {
-      localStorage.setItem('current-user', signInInfo.email)
-      history.push("/home" )
-    }else{
-       swal("You login doesn't work, please try again", { button: false });
-      }
+      localStorage.setItem("current-user", signInInfo.email);
+      history.push("/home");
+    } else {
+      swal("You login doesn't work, please try again", { button: false });
+    }
   };
 
   const handleSignInInput = (event) => {
@@ -37,15 +37,15 @@ function SignIn() {
     });
   };
 
- console.log(signInInfo)
- 
+  console.log(signInInfo);
+
   return (
     <div>
       <div className="SignIn">
         <div className="container-fluid d-flex justify-content-center">
           <div className="signcard">
             <div className="card-header">
-              <h3>Sign In</h3>
+              <h3>Log In</h3>
             </div>
             <div className="card-body">
               <form>
@@ -72,7 +72,6 @@ function SignIn() {
                   />
                 </div>
                 <br />
-               
 
                 <div className="form-group">
                   <input
@@ -94,9 +93,7 @@ function SignIn() {
                   Sign up here
                 </Link>
               </div>
-              <div>
-               
-              </div>
+              <div></div>
             </div>
           </div>
         </div>

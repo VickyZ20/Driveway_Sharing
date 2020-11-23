@@ -5,7 +5,7 @@ import DayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import swal from "sweetalert";
 import Calendar from "../components/Calendar";
-import {useHistory} from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 import * as loginToken from "../components/loginTokenAndSignOff";
 
 function MakeAppointmentTesting() {
@@ -16,11 +16,8 @@ function MakeAppointmentTesting() {
   const [endTime, setEndTime] = useState("");
   const [datePicked, setDatePicked] = useState("");
   const [existingAppointment, setExistingAppointment] = useState([]);
- 
 
   const [userInfo, setUserInfo] = useState();
-  
-
 
   const getAppointment = async (query, path) => {
     const res = await fetch(path, {
@@ -56,52 +53,41 @@ function MakeAppointmentTesting() {
         0
       ),
     };
-    
 
-    setExistingAppointment(oldArray => [...oldArray, schedule])
-
-
+    setExistingAppointment((oldArray) => [...oldArray, schedule]);
   };
 
-
-  const confirmSchedule= async ()=>{
-
-  const lastItem = existingAppointment[existingAppointment.length - 1]
-   swal("Your appointment is scheduled", { button: false });
-  const res = await fetch("/insert_appointment", {
+  const confirmSchedule = async () => {
+    const lastItem = existingAppointment[existingAppointment.length - 1];
+    swal("Your appointment is scheduled", { button: false });
+    const res = await fetch("/insert_appointment", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(lastItem),
     });
+    console.log(res.body);
 
-  history.push("/home" )
-   
+    history.push("/home");
   };
 
+  //check database if the user is in the currently login collection
+  useEffect(() => {
+    check();
+  }, []);
 
-   //check database if the user is in the currently login collection
-  useEffect(()=>{
-    check()
-
-  },[])
-
-    const check =async ()=>{
-
+  const check = async () => {
     const data = localStorage.getItem("current-user");
 
-    if (data) { 
-      const result = await loginToken.checkCurrentLogin({email:data})
-      console.log(result)
-      if (result.result === false){
-        
-           history.push("/v_signin" )
+    if (data) {
+      const result = await loginToken.checkCurrentLogin({ email: data });
+      console.log(result);
+      if (result.result === false) {
+        history.push("/v_signin");
       }
-
     }
-}
-
+  };
 
   useEffect(() => {
     initialSetup();
@@ -109,11 +95,9 @@ function MakeAppointmentTesting() {
 
   const initialSetup = async () => {
     const data = localStorage.getItem("current-user");
-    console.log(data)
+    console.log(data);
     if (data) {
-    
-     setUserInfo(data);
-
+      setUserInfo(data);
     }
 
     const postRent = await localStorage.getItem("post-picked");
@@ -136,12 +120,6 @@ function MakeAppointmentTesting() {
     }
   };
 
-
-
-
-
-
-
   return (
     <div>
       <br />
@@ -153,7 +131,8 @@ function MakeAppointmentTesting() {
               selectedDays={datePicked}
               onDayClick={(e) => {
                 setDatePicked(e);
-              }}/>
+              }}
+            />
 
             <h5>Start Time </h5>
             <TimePicker
@@ -184,7 +163,9 @@ function MakeAppointmentTesting() {
                 <button className="btn-primary m-3" onClick={handleSchduleBtn}>
                   Schedule
                 </button>
-                <button className="btn-primary m-3" onClick={confirmSchedule}>Confirm</button>
+                <button className="btn-primary m-3" onClick={confirmSchedule}>
+                  Confirm
+                </button>
               </div>
             </div>
           </div>
