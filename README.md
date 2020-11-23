@@ -1,6 +1,6 @@
 # Driveway Sharing 
 
-### Auther: Alex Yang and Vicky Zhuang
+### Auther: Vicky Zhuang and Alex Yang
 
 ### Class Link: https://johnguerra.co/classes/webDevelopment_fall_2020/
 
