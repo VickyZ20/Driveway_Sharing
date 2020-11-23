@@ -1,16 +1,16 @@
-# Driveway Sharing 
+# Parking Space Finder 
 
-### Auther: Vicky Zhuang and Alex Yang
+### Author: Vicky Zhuang and Alex Yang
 
 ### Class Link: https://johnguerra.co/classes/webDevelopment_fall_2020/
 
-## Objective:
+## Motivation:
 ### Our mission is helping to solve parking difficulties in popular cities like HK
 ### Using the sharing Economics idea, we encourage people to share parking
 ### space when it is empty.
 
-### media:
-![alt text](https://github.com/AZYDEVE/Drive_Way_Parking/blob/main/Image/sc1.png)
+### Media:
+![alt text](https://github.com/VickyZ20/Driveway_Sharing/blob/master/media/shot1.png)
 ![alt text](https://github.com/AZYDEVE/Drive_Way_Parking/blob/main/Image/sc3.png)
 ![alt text](https://github.com/AZYDEVE/Drive_Way_Parking/blob/main/Image/sc2.png)
 
