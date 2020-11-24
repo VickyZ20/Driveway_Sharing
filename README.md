@@ -23,5 +23,6 @@
 - use npm start or yarn start in the forntEnd-react directory to start local host
 - the page will jump to localhost:3000/hola directly 
 
-
+### License:
+- MIT
 
